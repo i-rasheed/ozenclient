@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import Message from '../components/Message';
 import Axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Oval } from  'react-loader-spinner'
 
 export default function ServicesList() {
 	const [businesses, setBusinesses] = useState([]);
@@ -76,7 +78,7 @@ export default function ServicesList() {
         {
 			isLoading ? (
 				<>
-				<p>loading...</p>
+				<Oval color="blue" height={50} width={50} /> <p>loading...</p>
 				</>
 			) : error ? (
 				<>
